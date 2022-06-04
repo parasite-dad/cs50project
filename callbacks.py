@@ -19,12 +19,15 @@ import pandas as pd
 import sqlite3
 from layouts import index_string_login, index_string_logout
 import os
+import psycopg2
 #con = sqlite3.connect("./chart.db", check_same_thread=False)
-uri = os.getenv("DATABASE_URL")
-if uri.startswith("postgres://"):
-    uri = uri.replace("postgres://", "postgresql://")
-con = SQL(uri)
-
+# uri = os.getenv("DATABASE_URL")
+# if uri.startswith("postgres://"):
+#     uri = uri.replace("postgres://", "postgresql://")
+# con = SQL(uri)
+con = psycopg2.connect(
+   database="db1sc0b7bf1f8d", user='vgqtsparahzsjh', password='61473f3d10715838adce26169ab55863a3fb33bb9edaaea104c6ff89c7eea766', host='ec2-52-203-118-49.compute-1.amazonaws.com', port= '5432'
+)
 #from app import con
 #from layouts import graph_layout,sidebar,content,sidebar_right,modal
 
