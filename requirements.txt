@@ -23,7 +23,6 @@ colorama==0.4.4
 compare50==1.2.6
 cryptography==37.0.2
 cs50==9.0.0
-CS50-VSIX-Client @ file:///tmp/cs50.vsix/python-clients/cs50vsix-client
 cssselect2==0.6.0
 dash==2.4.1
 dash-bootstrap-components==1.1.0
