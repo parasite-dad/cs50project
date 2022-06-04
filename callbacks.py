@@ -18,7 +18,12 @@ from numpy import isnan
 import pandas as pd
 import sqlite3
 from layouts import index_string_login, index_string_logout
-con = sqlite3.connect("./chart.db", check_same_thread=False)
+import os
+#con = sqlite3.connect("./chart.db", check_same_thread=False)
+uri = os.getenv("DATABASE_URL")
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://")
+con = SQL(uri)
 
 #from app import con
 #from layouts import graph_layout,sidebar,content,sidebar_right,modal
