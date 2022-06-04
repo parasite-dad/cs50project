@@ -1,0 +1,44 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+#sidebar_right
+{
+    right: 0;
+    padding: 1rem 1rem;
+    background-color: #f8f9fa;
+}
+#sidebar
+{
+    left: 0;
+    padding: 0.5rem 0.5rem;
+    background-color: #f8f9fa;
+}
+#page-content
+{
+    padding: 1rem 1rem;
+}
+#overlap,#momentum,#volume,#volatility
+{
+    font-size:0.08rem;
+}
+h2
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+body
+{
+    background-color: #f8f9fa;
+}
+#doit,#register, #login, #logout
+{
+    text-shadow: 2px 2px 5px red;
+}
+
+#doit:hover,#register:hover, #login:hover, #logout:hover
+{
+    color: red;
+}

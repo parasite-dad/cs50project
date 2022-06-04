@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Warning Message
+{% endblock %}
+
+{% block main %}
+    <!-- https://memegen.link/ -->
+    <!-- <img alt="{{ top }}" class="border img-fluid" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://i.imgur.com/CsCgN7Ll.png&width=400" title="{{ top }}"> -->
+    <div class="alert alert-danger" role="alert">
+       <h1 id=""msg"><strong>{{msg}}</strong></h1>  <a href={{login}} class="alert-link"><h3 id="doit">Please click here to retry.</h3></a>.
+      </div>
+{% endblock %}
