@@ -161,7 +161,7 @@ def login():
         #con = sqlite3.connect("./chart.db", check_same_thread=False)
         con = psycopg2.connect(database="db1sc0b7bf1f8d", user='vgqtsparahzsjh', password='61473f3d10715838adce26169ab55863a3fb33bb9edaaea104c6ff89c7eea766', host='ec2-52-203-118-49.compute-1.amazonaws.com', port= '5432')
 
-        con.row_factory = sqlite3.Row
+        #con.row_factory = sqlite3.Row
         db = con.cursor()
         #db = con.cursor()
         rows=[]
@@ -213,6 +213,7 @@ def register():
             #print(type(request.form.get("password")))
 
             # Query database for username
+            con = psycopg2.connect(database="db1sc0b7bf1f8d", user='vgqtsparahzsjh', password='61473f3d10715838adce26169ab55863a3fb33bb9edaaea104c6ff89c7eea766', host='ec2-52-203-118-49.compute-1.amazonaws.com', port= '5432')
             db = con.cursor()
             rows=[]
             for row in db.execute("SELECT * FROM users WHERE username = (?)",(request.form.get("username"),)):
@@ -223,6 +224,7 @@ def register():
     # GENERATE A HASH
                 passwordhash = generate_password_hash(
                     request.form.get("password"))
+                con = psycopg2.connect(database="db1sc0b7bf1f8d", user='vgqtsparahzsjh', password='61473f3d10715838adce26169ab55863a3fb33bb9edaaea104c6ff89c7eea766', host='ec2-52-203-118-49.compute-1.amazonaws.com', port= '5432')
                 db = con.cursor()
                 db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",
                            (name, passwordhash))
