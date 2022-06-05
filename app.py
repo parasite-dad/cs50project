@@ -170,8 +170,10 @@ def login():
         rows=[]
         #for row in db.execute("SELECT * FROM users WHERE username = (?)",(request.form.get("username"),)):
         #for row in db.execute("SELECT * FROM users WHERE username = ?",request.form.get("username")):
-        for row in db.execute("SELECT * FROM users WHERE username = 'ck'"):
-            rows.append(row)
+        #for row in db.execute("SELECT * FROM users WHERE username = 'ck'"):
+            #rows.append(row)
+        db.execute("SELECT * FROM users WHERE username = 'ck'")
+        rows=db.fetchall()
         print(rows)
         # Ensure username exists and password is correct
         if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
