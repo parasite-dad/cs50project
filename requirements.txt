@@ -108,7 +108,6 @@ sortedcontainers==2.4.0
 soupsieve==2.3.2.post1
 SQLAlchemy==1.4.36
 sqlparse==0.4.2
-TA-Lib==0.4.24
 tenacity==8.0.1
 termcolor==1.1.0
 terminado==0.13.3
