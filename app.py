@@ -172,17 +172,21 @@ def login():
         #for row in db.execute("SELECT * FROM users WHERE username = ?",request.form.get("username")):
         #for row in db.execute("SELECT * FROM users WHERE username = 'ck'"):
             #rows.append(row)
-        db.execute("SELECT * FROM users WHERE username = 'ck'")
+        db.execute("SELECT * FROM users WHERE username = ?",request.form.get("username")):
+        #db.execute("SELECT * FROM users WHERE username = 'ck'")
         rows=db.fetchall()
         print(rows)
         # Ensure username exists and password is correct
-        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
+        #if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
+        if len(rows) != 1 or not check_password_hash(rows[0][2], request.form.get("password")):
             return render_template("warning.html", msg="INVALID USERNAME AND/OR PASSWORD.",login="/login")
             return apology("invalid username and/or password", 403)
 
         # Remember which user has logged in
-        session["user_id"] = rows[0]["id"]
-        session["username"] = rows[0]["username"]
+        # session["user_id"] = rows[0]["id"]
+        # session["username"] = rows[0]["username"]
+        session["user_id"] = rows[0][0]
+        session["username"] = rows[0][1]
         # Redirect user to home page
         app.index_string=index_string_login
         return redirect("/graph")
