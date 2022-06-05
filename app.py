@@ -170,7 +170,7 @@ def login():
         rows=[]
         #for row in db.execute("SELECT * FROM users WHERE username = (?)",(request.form.get("username"),)):
         #for row in db.execute("SELECT * FROM users WHERE username = ?",request.form.get("username")):
-        for row in db.execute("SELECT * FROM users WHERE username = ck"):
+        for row in db.execute("SELECT * FROM users WHERE username = 'ck'"):
             rows.append(row)
         print(rows)
         # Ensure username exists and password is correct
