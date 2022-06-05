@@ -172,7 +172,7 @@ def login():
         #for row in db.execute("SELECT * FROM users WHERE username = ?",request.form.get("username")):
         #for row in db.execute("SELECT * FROM users WHERE username = 'ck'"):
             #rows.append(row)
-        db.execute("SELECT * FROM users WHERE username = %s",(request.form.get("username")))
+        db.execute("SELECT * FROM users WHERE username = (%s)",(request.form.get("username")))
         #db.execute("SELECT * FROM users WHERE username = 'ck'")
         rows=db.fetchall()
         print(rows)
