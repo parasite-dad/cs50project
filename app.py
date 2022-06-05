@@ -159,7 +159,10 @@ def login():
             return render_template("warning.html", msg="YOU MUST PROVIDE PASSWORD.",login="/login")
             return apology("must provide password", 403)
         #con = sqlite3.connect("./chart.db", check_same_thread=False)
-        con = psycopg2.connect(database="db1sc0b7bf1f8d", user='vgqtsparahzsjh', password='61473f3d10715838adce26169ab55863a3fb33bb9edaaea104c6ff89c7eea766', host='ec2-52-203-118-49.compute-1.amazonaws.com', port= '5432')
+        try:
+            con = psycopg2.connect(database="db1sc0b7bf1f8d", user='vgqtsparahzsjh', password='61473f3d10715838adce26169ab55863a3fb33bb9edaaea104c6ff89c7eea766', host='ec2-52-203-118-49.compute-1.amazonaws.com', port= '5432')
+        except:
+            print("success db con")
 
         #con.row_factory = sqlite3.Row
         db = con.cursor()
